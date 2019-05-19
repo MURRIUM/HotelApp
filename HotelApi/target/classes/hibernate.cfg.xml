@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hotel?useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">160573aa</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <mapping resource="CategoryEntity.hbm.xml"/>
+        <mapping class="api.Entity.CategoryEntity"/>
+        <mapping resource="CharacteristicsEntity.hbm.xml"/>
+        <mapping class="api.Entity.CharacteristicsEntity"/>
+        <mapping resource="CharacteristicsRoomsEntity.hbm.xml"/>
+        <mapping class="api.Entity.CharacteristicsRoomsEntity"/>
+        <mapping class="api.Entity.EmployeesEntity"/>
+        <mapping resource="EmployeesEntity.hbm.xml"/>
+        <mapping resource="OrderEntity.hbm.xml"/>
+        <mapping class="api.Entity.OrdersEntity"/>
+        <mapping resource="ResidentsEntity.hbm.xml"/>
+        <mapping class="api.Entity.ResidentsEntity"/>
+        <mapping resource="RoomServiceEntity.hbm.xml"/>
+        <mapping class="api.Entity.RoomServiceEntity"/>
+        <mapping class="api.Entity.RoomsEntity"/>
+        <mapping resource="RoomsEntity.hbm.xml"/>
+        <mapping resource="ServicesEntity.hbm.xml"/>
+        <mapping class="api.Entity.ServicesEntity"/>
+        <mapping class="api.Entity.StockEntity"/>
+        <mapping resource="StockEntity.hbm.xml"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,26 @@
+<div>
+  <div class="hotel-app__resident-table">
+    <table class="table"
+           *ngIf="categories">
+      <tr class="tier">
+        <th class="tier__th_small">id</th>
+        <th class="tier__th">Название</th>
+      </tr>
+      <tr class="tier"
+          *ngFor="let item of categories"
+          (click)="onEdit(item)"
+      >
+        <td class="tier__td">{{item.idCategory}}</td>
+        <td class="tier__td">{{item.name}}</td>
+      </tr>
+    </table>
+  </div>
+  <button
+    class="button"
+    mat-raised-button
+    (click)="onCreate()"
+  >
+    Добавить
+  </button>
+</div>
+

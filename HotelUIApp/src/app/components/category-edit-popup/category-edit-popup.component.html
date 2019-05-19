@@ -1,0 +1,11 @@
+<div class="container">
+  <form [formGroup]="categoryEdit" class="form">
+    <div>
+      <label class="form__label-text">Название:
+        <input class="form__input-text" type="text" formControlName="name" placeholder="Название">
+      </label><br>
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!categoryEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!categoryEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="hotel-app__resident-table">
+  <table class="table"
+         *ngIf="residents">
+    <tr class="tier">
+      <th class="tier__th_small">id</th>
+      <th class="tier__th">Фамилия</th>
+      <th class="tier__th">Имя</th>
+      <th class="tier__th">Отчество</th>
+      <th class="tier__th">Организация</th>
+      <th class="tier__th">Название организации</th>
+    </tr>
+    <tr class="tier"
+        *ngFor="let resident of residents"
+        routerLink="/resident/{{resident.idResident}}"
+    >
+      <td class="tier__td">{{resident.idResident}}</td>
+      <td class="tier__td">{{resident.surname}}</td>
+      <td class="tier__td">{{resident.firstName}}</td>
+      <td class="tier__td">{{resident.secondName}}</td>
+      <td class="tier__td">{{resident.organization}}</td>
+      <td class="tier__td">{{resident.nameOfOrganization}}</td>
+    </tr>
+  </table>
+</div>
+<button
+  class="button"
+  mat-raised-button
+  (click)="onCreate()"
+>
+  Добавить
+</button>
+

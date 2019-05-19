@@ -1,0 +1,24 @@
+<div class="container">
+  <form [formGroup]="residentEdit" class="form">
+    <div>
+      <label class="form__label-text">Фамилия:
+        <input class="form__input-text" type="text" formControlName="surname" placeholder="Фамилия">
+      </label><br>
+      <label class="form__label-text">Имя:
+        <input class="form__input-text" type="text" formControlName="firstName" placeholder="Имя">
+      </label><br>
+      <label class="form__label-text">Отчество:
+        <input class="form__input-text" type="text" formControlName="secondName" placeholder="Отчество">
+      </label><br>
+      <label class="form__label-text">Организация:
+        <select class="form__label-text" id="organization" formControlName="organization">
+          <option class="form__label-text" *ngFor="let org of organizations" [ngValue]="org">{{org}}</option>
+        </select>
+      </label><br>
+      <label class="form__label-text">Название организации:
+        <input class="form__input-text" type="text" formControlName="nameOfOrg" placeholder="Название организации">
+      </label><br>
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!residentEdit.valid" (click)="onSubmit()">Сохранить</button>
+  </form>
+</div>

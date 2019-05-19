@@ -1,0 +1,25 @@
+<div class="hotel-app__resident-table">
+  <table class="table"
+         *ngIf="stocks">
+    <tr class="tier">
+      <th class="tier__th_small">id</th>
+      <th class="tier__th">Название</th>
+      <th class="tier__th">Скидка</th>
+    </tr>
+    <tr class="tier"
+        *ngFor="let item of stocks"
+        (click)="onEdit(item)"
+    >
+      <td class="tier__td">{{item.idStock}}</td>
+      <td class="tier__td">{{item.name}}</td>
+      <td class="tier__td">{{item.discount}}</td>
+    </tr>
+  </table>
+</div>
+<button
+  class="button"
+  mat-raised-button
+  (click)="onCreate()"
+>
+  Добавить
+</button>

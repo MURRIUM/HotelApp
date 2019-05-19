@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="employeeEdit" class="form">
+    <div>
+      <label class="form__label-text">Фамилия:
+        <input class="form__input-text" type="text" formControlName="surname" placeholder="Фамилия">
+      </label><br>
+      <label class="form__label-text">Имя:
+        <input class="form__input-text" type="text" formControlName="firstName" placeholder="Имя">
+      </label><br>
+      <label class="form__label-text">Отчество:
+        <input class="form__input-text" type="text" formControlName="secondName" placeholder="Отчество">
+      </label><br>
+      <label class="form__label-text">Пол:
+        <input class="form__input-text" type="text" formControlName="sex" placeholder="Пол">
+      </label><br>
+      <label class="form__label-text">Должность:
+        <input class="form__input-text" type="text" formControlName="position" placeholder="Должность">
+      </label><br>
+      <label class="form__label-text">Зарплата:
+        <input class="form__input-text" type="text" formControlName="salary" placeholder="Зарплата">
+      </label><br>
+      <label class="form__label-text">Логин:
+        <input class="form__input-text" type="text" formControlName="login" placeholder="Логин">
+      </label><br>
+      <label class="form__label-text">Пароль:
+        <input class="form__input-text" type="text" formControlName="password" placeholder="Пароль">
+      </label><br>
+
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!employeeEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!employeeEdit.valid || employee" (click)="onDelete()">Удалить</button>
+  </form>
+</div>
+

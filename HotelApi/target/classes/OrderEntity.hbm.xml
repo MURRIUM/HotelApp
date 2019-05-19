@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="api.Entity.OrdersEntity" table="orders" schema="hotel">
+        <id name="idOrder">
+            <column name="id_order" sql-type="int(11)"/>
+        </id>
+        <property name="resident">
+            <column name="Resident" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="room">
+            <column name="Room" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="stock">
+            <column name="Stock" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="checkInDate">
+            <column name="Check_in_date" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dateOfEviction">
+            <column name="Date_of_eviction" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

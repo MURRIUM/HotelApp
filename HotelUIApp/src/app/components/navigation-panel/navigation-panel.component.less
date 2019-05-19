@@ -1,0 +1,33 @@
+@import url('../../../assets/colors.less');
+
+.navigation{
+  &__button{
+    height: 40px;
+    background-color: @blue;
+    color: white;
+    margin: 3px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid @spaceGray;
+    &:hover{
+      background-color: @darkblue;
+      //background-color: rgba(36, 57, 80, 0.71);
+    }
+    &:disabled{
+      background-color: @disabledGray;
+    }
+    &:active, &:focus{
+      border: 2px solid @spaceGray;
+      outline: none !important;
+    }
+  }
+}
+
+.admin{
+  background-color: @green;
+  &:hover{
+      background-color: @darkgreen;
+      //background-color: rgba(36, 57, 80, 0.71);
+  }
+}

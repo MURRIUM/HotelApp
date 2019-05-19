@@ -1,0 +1,39 @@
+<div class="container">
+  <form [formGroup]="roomsServicesEdit" class="form">
+    <label class="form__label-text">Комната:
+      <select class="form__label-text" id="room" formControlName="room">
+        <option
+          class="form__label-text"
+          *ngFor="let item of rooms"
+          [ngValue]="item.room"
+        >
+          {{item.room}} {{item.capacity}} {{getCategory(item.category).name}}  {{item.cost}}
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Сервис:
+      <select class="form__label-text" id="service" formControlName="service">
+        <option
+          class="form__label-text"
+          *ngFor="let item of services"
+          [ngValue]="item.idService"
+        >
+          {{item.name}} {{item.price}}
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Сотрудник:
+      <select class="form__label-text" id="employee" formControlName="employee">
+        <option
+          class="form__label-text"
+          *ngFor="let item of employees"
+          [ngValue]="item.idEmployee"
+        >
+          {{item.surname}} {{item.position}}
+        </option>
+      </select>
+    </label><br>
+    <button class="container__button" mat-raised-button [disabled]="!roomsServicesEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!roomsServicesEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

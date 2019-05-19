@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="stockEdit" class="form">
+    <div>
+      <label class="form__label-text">Название:
+        <input class="form__input-text" type="text" formControlName="name" placeholder="Название">
+      </label><br>
+      <label class="form__label-text">Скидка:
+        <input class="form__input-text" type="text" formControlName="discount" placeholder="Скидка">
+      </label><br>
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!stockEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!stockEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

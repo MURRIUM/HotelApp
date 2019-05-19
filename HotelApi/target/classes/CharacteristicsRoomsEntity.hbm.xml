@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="api.Entity.CharacteristicsRoomsEntity" table="characteristics_rooms" schema="hotel">
+        <composite-id mapped="true" class="api.Entity.CharacteristicsRoomsEntityPK">
+            <key-property name="room">
+                <column name="Room" sql-type="int(11)"/>
+            </key-property>
+            <key-property name="idCharacteristic">
+                <column name="id_characteristic" sql-type="int(11)"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

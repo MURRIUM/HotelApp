@@ -1,0 +1,35 @@
+<div class="navigation">
+  <button class="navigation__button" routerLink="/residents">
+    Постояльцы
+  </button>
+  <button class="navigation__button" routerLink="/orders">
+    Заказы
+  </button>
+  <button class="navigation__button" routerLink="/roomsServices">
+    Услуги в номерах
+  </button>
+  <button class="navigation__button admin" routerLink="/employees" *ngIf="isAdmin">
+    Сотрудники
+  </button>
+  <button class="navigation__button admin" routerLink="/services" *ngIf="isAdmin">
+    Услуги
+  </button>
+  <button class="navigation__button admin" routerLink="/rooms" *ngIf="isAdmin">
+    Номера
+  </button>
+  <button class="navigation__button admin" routerLink="/characteristics" *ngIf="isAdmin">
+    Характеристики
+  </button>
+  <button class="navigation__button admin" routerLink="/characteristicsRooms" *ngIf="isAdmin">
+    Характеристики номеров
+  </button>
+  <button class="navigation__button admin" routerLink="/categories" *ngIf="isAdmin">
+    Категории
+  </button>
+  <button class="navigation__button admin" routerLink="/stocks" *ngIf="isAdmin">
+    Акции
+  </button>
+  <button class="navigation__button" (click)="logout()">
+    Выход
+  </button>
+</div>

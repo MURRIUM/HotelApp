@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="serviceEdit" class="form">
+    <div>
+      <label class="form__label-text">Название:
+        <input class="form__input-text" type="text" formControlName="name" placeholder="Название">
+      </label><br>
+    </div>
+    <div>
+      <label class="form__label-text">Цена:
+        <input class="form__input-text" type="text" formControlName="price" placeholder="Цена">
+      </label><br>
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!serviceEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!serviceEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>
+

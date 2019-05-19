@@ -1,0 +1,47 @@
+@import url('../../../assets/colors.less');
+
+.hotel-app__resident-profile {
+  padding: 20px 20px;
+  background: @spaceGray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  width: 101%;
+  &__text {
+    &__classification{
+      text-shadow: 2px 0 0 @border, -2px 0 0 @border, 0 2px 0 @border,
+        0 -2px 0 @border, 1px 1px @border, -1px -1px 0 @border,
+        1px -1px 0 @border, -1px 1px 0 @border;
+      font-size: 20px;
+
+      display: block;
+    }
+
+    &__data {
+      padding-bottom: 10px;
+      display: block;
+    }
+  }
+}
+
+.button{
+  background-color: @blue;
+  color: @white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  &:hover{
+    background-color: @darkblue;
+  }
+  &:disabled{
+    background-color: @disabledGray;
+  }
+}
+
+.leftMarg{
+  margin-left: 10px;
+}
+

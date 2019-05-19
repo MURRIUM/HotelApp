@@ -1,0 +1,35 @@
+<div>
+  <div class="hotel-app__resident-table">
+    <table class="table"
+           *ngIf="orders">
+      <tr class="tier">
+        <th class="tier__th_small">id</th>
+        <th class="tier__th">Постоялец</th>
+        <th class="tier__th">Комната</th>
+        <th class="tier__th">Акция</th>
+        <th class="tier__th">Дата заселения</th>
+        <th class="tier__th">Дата выселения</th>
+      </tr>
+      <tr class="tier"
+          *ngFor="let item of orders"
+          (click)="onEdit(item)"
+      >
+        <td class="tier__td">{{item.idOrder}}</td>
+        <td class="tier__td">{{getResident(item.resident).surname}} {{getResident(item.resident).firstName}} {{getResident(item.resident).secondName}}</td>
+        <td class="tier__td">
+          {{item.room}} {{getRoom(item.room).capacity}} {{getCategory(getRoom(item.room).category).name}} {{getRoom(item.room).cost}} руб.</td>
+
+        <td class="tier__td">{{getStock(item.stock).name}} {{getStock(item.stock).discount}}%</td>
+        <td class="tier__td">{{item.checkInDate}}</td>
+        <td class="tier__td">{{item.dateOfEviction}}</td>
+      </tr>
+    </table>
+  </div>
+  <button
+    class="button"
+    mat-raised-button
+    (click)="onCreate()"
+  >
+    Добавить
+  </button>
+</div>

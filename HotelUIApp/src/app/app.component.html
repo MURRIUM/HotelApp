@@ -1,0 +1,10 @@
+<div class="hotel-app" *ngIf="authorized" >
+  <h1 class="hotel-app__header" routerLink="/welcome">Hotel California</h1>
+  <app-navigation-panel class="hotel-app__navigation" (checkLogin)="logout()" [isAdmin]="isAdmin"></app-navigation-panel>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="hotel-app" *ngIf="!authorized">
+  <app-login-form (checkLogin)="checkLogin()"></app-login-form>
+</div>
+

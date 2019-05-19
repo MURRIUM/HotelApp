@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="api.Entity.ResidentsEntity" table="residents" schema="hotel">
+        <id name="idResident">
+            <column name="id_resident" sql-type="int(11)"/>
+        </id>
+        <property name="surname">
+            <column name="Surname" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="firstName">
+            <column name="First_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="secondName">
+            <column name="Second_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="organization">
+            <column name="Organization" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="nameOfOrganization">
+            <column name="Name_of_organization" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

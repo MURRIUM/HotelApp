@@ -1,0 +1,45 @@
+<div class="container">
+  <form [formGroup]="ordersEdit" class="form">
+    <label class="form__label-text">Постоялец:
+      <select class="form__label-text" id="resident" formControlName="resident">
+        <option
+          class="form__label-text"
+          *ngFor="let item of residents"
+          [ngValue]="item.idResident"
+        >
+          {{item.surname}} {{item.firstName}} {{item.secondName}}
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Комната:
+      <select class="form__label-text" id="room" formControlName="room">
+        <option
+          class="form__label-text"
+          *ngFor="let item of rooms"
+          [ngValue]="item.room"
+        >
+          {{item.room}} {{item.capacity}} {{getCategory(item.category).name}}  {{item.cost}}
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Акция:
+      <select class="form__label-text" id="stock" formControlName="stock">
+        <option
+          class="form__label-text"
+          *ngFor="let item of stocks"
+          [ngValue]="item.idStock"
+        >
+          {{item.name}} {{item.discount}}%
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Дата заселения:
+      <input class="form__input-date" type="date" formControlName="checkInDate" placeholder="Дата заселения">
+    </label><br>
+    <label class="form__label-text">Дата выселения:
+      <input class="form__input-date" type="date" formControlName="dateOfEviction" placeholder="Дата выселения">
+    </label><br>
+    <button class="container__button" mat-raised-button [disabled]="!ordersEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!ordersEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

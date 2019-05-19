@@ -1,0 +1,30 @@
+<div>
+  <div class="hotel-app__resident-table">
+    <table class="table"
+           *ngIf="roomsServices">
+      <tr class="tier">
+        <th class="tier__th_small">id</th>
+        <th class="tier__th">Комната</th>
+        <th class="tier__th">Услуга</th>
+        <th class="tier__th">Сотрудник</th>
+      </tr>
+      <tr class="tier"
+          *ngFor="let item of roomsServices"
+          (click)="onEdit(item)"
+      >
+        <td class="tier__td">{{item.idService}}</td>
+        <td class="tier__td">
+          {{item.room}} {{getRoom(item.room).capacity}} {{getCategory(getRoom(item.room).category).name}} {{getRoom(item.room).cost}}</td>
+        <td class="tier__td">{{getService(item.service).name}} {{getService(item.service).price}}</td>
+        <td class="tier__td">{{getEmployee(item.employee).surname}} {{getEmployee(item.employee).position}}</td>
+      </tr>
+    </table>
+  </div>
+  <button
+    class="button"
+    mat-raised-button
+    (click)="onCreate()"
+  >
+    Добавить
+  </button>
+</div>

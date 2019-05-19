@@ -1,0 +1,13 @@
+<div class="container">
+  <form [formGroup]="loginForm" class="form">
+    <div>
+      <label class="form__label-text">Логин:
+        <input class="form__input-text" type="text" formControlName="login" placeholder="login">
+      </label><br>
+      <label class="form__label-text">Пароль:
+        <input class="form__input-text" type="password" formControlName="password" placeholder="password">
+      </label><br>
+    </div>
+    <button class="container__button" [disabled]="!loginForm.valid" (click)="onSubmit()">Войти</button>
+  </form>
+</div>

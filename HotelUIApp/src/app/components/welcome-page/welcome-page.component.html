@@ -1,0 +1,9 @@
+<div class="hotel-app__resident-profile">
+  <div class="hotel-app__resident-profile__text">
+    <div class="hotel-app__resident-profile__text">
+      <span class="hotel-app__resident-profile__text__classification">Добро пожаловать, {{getEmployee().firstName}} {{getEmployee().secondName}}</span>
+      <span class="hotel-app__resident-profile__text__classification" *ngIf="getEmployee().login === 'admin'">Ваш текущий уровень доступа: Администратор</span>
+      <span class="hotel-app__resident-profile__text__classification" *ngIf="!(getEmployee().login === 'admin')">Ваш текущий уровень доступа: Сотрудник</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="characteristicsRoomsEdit" class="form">
+    <label class="form__label-text">Комната:
+      <select class="form__label-text" id="room" formControlName="room">
+        <option
+          class="form__label-text"
+          *ngFor="let item of rooms"
+          [ngValue]="item.room"
+        >
+          {{item.room}} {{item.capacity}} {{getCategory(item.category).name}}  {{item.cost}}
+        </option>
+      </select>
+    </label><br>
+    <label class="form__label-text">Характеристика:
+      <select class="form__label-text" id="idCharacteristic" formControlName="idCharacteristic">
+        <option
+          class="form__label-text"
+          *ngFor="let item of characteristics"
+          [ngValue]="item.idCharacteristic"
+        >
+          {{item.idCharacteristic}} {{item.nameCharacteristic}}
+        </option>
+      </select>
+    </label><br>
+    <button class="container__button" mat-raised-button [disabled]="!characteristicsRoomsEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!characteristicsRoomsEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

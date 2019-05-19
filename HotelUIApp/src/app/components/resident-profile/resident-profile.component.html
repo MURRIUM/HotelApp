@@ -1,0 +1,35 @@
+<div *ngIf="resident"
+      class="hotel-app__resident-profile">
+  <div class="hotel-app__resident-profile__text">
+    <div class="hotel-app__resident-profile__text">
+      <span class="hotel-app__resident-profile__text__classification">Фамилия имя отчество: </span>
+      <span class="hotel-app__resident-profile__text__data">{{resident.surname}} {{resident.firstName}} {{resident.secondName}}</span>
+    </div>
+
+    <div class="hotel-app__resident-profile__text">
+      <span class="hotel-app__resident-profile__text__classification">Организация: </span>
+      <span class="hotel-app__resident-profile__text__data">{{resident.organization}}</span>
+    </div>
+
+    <div class="hotel-app__resident-profile__text">
+      <span class="hotel-app__resident-profile__text__classification">Название организации: </span>
+      <span class="hotel-app__resident-profile__text__data">{{resident.nameOfOrganization}}</span>
+    </div>
+    <button
+      class="button"
+      mat-raised-button
+      (click)="onEdit()"
+    >
+      Изменить
+    </button>
+    <button
+      class="button leftMarg"
+      (click)="onDelete()"
+    >
+      Удалить
+    </button>
+
+  </div>
+
+
+</div>

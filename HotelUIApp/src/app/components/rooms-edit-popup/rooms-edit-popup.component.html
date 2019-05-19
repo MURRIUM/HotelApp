@@ -1,0 +1,23 @@
+<div class="container">
+  <form [formGroup]="roomEdit" class="form">
+    <div>
+      <label class="form__label-text">Комната:
+        <input class="form__input-text" type="text" formControlName="room" placeholder="Комната" disabled>
+      </label><br>
+      <label class="form__label-text">Вместительнсть:
+        <input class="form__input-text" type="text" formControlName="capacity" placeholder="Вместительнсть">
+      </label><br>
+      <label class="form__label-text">Организация:
+        <select class="form__label-text" id="category" formControlName="category">
+          <option class="form__label-text" *ngFor="let item of categories" [ngValue]="item.idCategory">{{item.name}}</option>
+        </select>
+      </label><br>
+      <label class="form__label-text">Цена:
+        <input class="form__input-text" type="text" formControlName="cost" placeholder="Цена">
+      </label><br>
+    </div>
+    <button class="container__button" mat-raised-button [disabled]="!roomEdit.valid" (click)="onSubmit()">Сохранить</button>
+    <button class="container__button" mat-raised-button [disabled]="!roomEdit.valid" (click)="onDelete()">Удалить</button>
+  </form>
+</div>
+

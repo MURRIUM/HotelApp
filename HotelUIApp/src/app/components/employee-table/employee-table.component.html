@@ -1,0 +1,35 @@
+<div class="hotel-app__resident-table">
+  <table class="table"
+         *ngIf="employees">
+    <tr class="tier">
+      <th class="tier__th_small">id</th>
+      <th class="tier__th">Фамилия</th>
+      <th class="tier__th">Имя</th>
+      <th class="tier__th">Отчество</th>
+      <th class="tier__th">Пол</th>
+      <th class="tier__th">Должность</th>
+      <th class="tier__th">Зарплата</th>
+      <th class="tier__th">Логин</th>
+    </tr>
+    <tr class="tier"
+        *ngFor="let item of employees"
+        (click)="onEdit(item)"
+    >
+      <td class="tier__td">{{item.idEmployee}}</td>
+      <td class="tier__td">{{item.surname}}</td>
+      <td class="tier__td">{{item.firstName}}</td>
+      <td class="tier__td">{{item.secondName}}</td>
+      <td class="tier__td">{{item.sex}}</td>
+      <td class="tier__td">{{item.position}}</td>
+      <td class="tier__td">{{item.salary}}</td>
+      <td class="tier__td">{{item.login}}</td>
+    </tr>
+  </table>
+</div>
+<button
+  class="button"
+  mat-raised-button
+  (click)="onCreate()"
+>
+  Добавить
+</button>
